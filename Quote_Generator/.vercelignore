@@ -1,0 +1,13 @@
+.git
+.next
+node_modules
+.env*.local
+.chrome-verify
+feature-verification-report.json
+feature-verification.png
+quote-generator-screenshot*.png
+verify-*.png
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

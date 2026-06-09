@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 33% 96%;
+    --foreground: 222 26% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 26% 14%;
+    --primary: 196 84% 27%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 17 75% 94%;
+    --secondary-foreground: 222 26% 14%;
+    --muted: 210 28% 92%;
+    --muted-foreground: 218 12% 44%;
+    --accent: 162 44% 88%;
+    --accent-foreground: 196 84% 18%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 20% 84%;
+    --input: 214 20% 84%;
+    --ring: 196 84% 27%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 26% 10%;
+    --foreground: 210 40% 96%;
+    --card: 222 22% 14%;
+    --card-foreground: 210 40% 96%;
+    --primary: 190 77% 56%;
+    --primary-foreground: 222 26% 10%;
+    --secondary: 217 28% 20%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 217 24% 20%;
+    --muted-foreground: 215 18% 72%;
+    --accent: 168 46% 25%;
+    --accent-foreground: 164 56% 92%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 24% 26%;
+    --input: 217 24% 26%;
+    --ring: 190 77% 56%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+}
