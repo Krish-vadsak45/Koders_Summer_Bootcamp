@@ -121,12 +121,26 @@ Runs ESLint across the project.
 
 ## Deployment
 
+Repository:
+
+```text
+https://github.com/Krish-vadsak45/Koders_Summer_Bootcamp/tree/main/03_Password_Generator
+```
+
+Expected GitHub Pages URL after deployment:
+
+```text
+https://Krish-vadsak45.github.io/Koders_Summer_Bootcamp/
+```
+
 The app is configured for static export in `next.config.ts`:
 
 ```ts
 const nextConfig = {
   output: "export",
   trailingSlash: true,
+  basePath: "/Koders_Summer_Bootcamp",
+  assetPrefix: "/Koders_Summer_Bootcamp/",
 };
 ```
 
@@ -136,7 +150,7 @@ After running:
 npm run build
 ```
 
-Deploy the generated `out/` folder to a static host.
+The included GitHub Actions workflow builds this subfolder and deploys the generated `out/` folder to GitHub Pages.
 
 Good deployment targets:
 
@@ -146,7 +160,7 @@ Good deployment targets:
 - GitHub Pages
 - Cloudflare Pages
 
-For GitHub Pages under a repository subpath, configure `basePath` and `assetPrefix` in `next.config.ts` before building.
+In local development, `basePath` and `assetPrefix` stay disabled. In GitHub Actions, the workflow sets `GITHUB_PAGES=true`, which enables the repository path prefix automatically.
 
 ## Design Notes
 
