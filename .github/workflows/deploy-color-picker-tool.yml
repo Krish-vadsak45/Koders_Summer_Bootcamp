@@ -44,10 +44,15 @@ jobs:
         env:
           GITHUB_PAGES: "true"
 
+      - name: Prepare GitHub Pages artifact
+        run: |
+          mkdir -p ../github-pages-artifact/04_Color_Picker_Tool
+          cp -R out/. ../github-pages-artifact/04_Color_Picker_Tool
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 04_Color_Picker_Tool/out
+          path: github-pages-artifact
 
   deploy:
     environment:
