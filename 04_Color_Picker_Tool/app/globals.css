@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 26% 97%;
+    --foreground: 226 27% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 226 27% 13%;
+    --primary: 173 72% 28%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 41 91% 91%;
+    --secondary-foreground: 29 56% 18%;
+    --muted: 215 22% 91%;
+    --muted-foreground: 219 12% 42%;
+    --accent: 334 62% 92%;
+    --accent-foreground: 334 55% 24%;
+    --destructive: 0 76% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 212 17% 82%;
+    --input: 212 17% 82%;
+    --ring: 173 72% 28%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 27% 9%;
+    --foreground: 210 36% 96%;
+    --card: 224 24% 13%;
+    --card-foreground: 210 36% 96%;
+    --primary: 176 67% 45%;
+    --primary-foreground: 224 27% 9%;
+    --secondary: 34 42% 20%;
+    --secondary-foreground: 41 91% 91%;
+    --muted: 220 18% 20%;
+    --muted-foreground: 214 18% 72%;
+    --accent: 331 35% 24%;
+    --accent-foreground: 334 70% 92%;
+    --destructive: 0 68% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 218 18% 26%;
+    --input: 218 18% 26%;
+    --ring: 176 67% 45%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .checkerboard {
+    background-image:
+      linear-gradient(45deg, rgba(15, 23, 42, 0.12) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(15, 23, 42, 0.12) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(15, 23, 42, 0.12) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(15, 23, 42, 0.12) 75%);
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+    background-size: 20px 20px;
+  }
+}
