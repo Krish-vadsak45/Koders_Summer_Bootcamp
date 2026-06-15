@@ -1,13 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["*"],
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "./*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Whitney: ["Whitney"],
+        Ginto: ["Ginto"],
+        ggSans: ["ggSans"],
+      },
+    },
   },
   plugins: [],
-  fontFamily:{
-    Whitney:["Whitney"],
-    Ginto:["Ginto"],
-    ggSans:["ggSans"],
-  },
-}
+};
