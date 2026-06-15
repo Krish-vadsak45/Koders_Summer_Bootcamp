@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const isGithubPages = process.env.GITHUB_PAGES === "true";
 const repoName = "Koders_Summer_Bootcamp";
-const projectPath = "01_Simple_Digital_Clock"; // Change this for each folder
+const projectPath = "01_Simple_Digital_Clock";
 const githubPagesBasePath = `/${repoName}/${projectPath}`;
 
 const nextConfig: NextConfig = {

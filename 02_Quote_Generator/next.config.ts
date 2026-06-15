@@ -1,5 +1,15 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {};
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+const repoName = "Koders_Summer_Bootcamp";
+const projectPath = "02_Quote_Generator";
+const githubPagesBasePath = `/${repoName}/${projectPath}`;
+
+const nextConfig: NextConfig = {
+  output: "export",
+  trailingSlash: true,
+  basePath: isGithubPages ? githubPagesBasePath : undefined,
+  assetPrefix: isGithubPages ? `${githubPagesBasePath}/` : undefined,
+};
 
 export default nextConfig;
