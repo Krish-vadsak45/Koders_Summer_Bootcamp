@@ -1,0 +1,66 @@
+name: Deploy All Projects to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build and Bundle All Projects
+        run: |
+          mkdir -p final-site
+
+          # List of all folders to build
+          PROJECTS=(
+            "01_Simple_Digital_Clock"
+            # "02_Quote_Generator"
+            "03_Password_Generator"
+            "04_Color_Picker_Tool"
+            "05_BMI_Calculator"
+            "06_Tip_Calculator"
+            "07_Utility_Toolkit"
+            "08_Discord_Landing_Page_Clone"
+          )
+
+          for folder in "${PROJECTS[@]}"; do
+            if [ -d "$folder" ]; then
+              echo "-----------------------------------"
+              echo "Building $folder..."
+              cd "$folder"
+              npm install
+              
+              # Handle different build outputs (Next.js uses 'out', Vite uses 'dist')
+              if [ "$folder" == "08_Discord_Landing_Page_Clone" ]; then
+                GITHUB_PAGES=true npm run build # Note: ensure you have a "build": "vite build" script
+                cp -R dist/. ../final-site/$folder
+              else
+                GITHUB_PAGES=true npm run build
+                cp -R out/. ../final-site/$folder
+              fi
+              cd ..
+            fi
+          done
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: final-site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
