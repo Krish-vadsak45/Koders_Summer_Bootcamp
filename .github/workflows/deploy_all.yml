@@ -21,18 +21,24 @@ jobs:
       - name: Build All
         run: |
           mkdir -p final-site
-          PROJECTS=("01_Simple_Digital_Clock" "03_Password_Generator" "04_Color_Picker_Tool" "05_BMI_Calculator" "06_Tip_Calculator" "07_Utility_Toolkit" "08_Discord_Landing_Page_Clone")
+          PROJECTS=("01_Simple_Digital_Clock" "03_Password_Generator" "04_Color_Picker_Tool" "05_BMI_Calculator" "06_Tip_Calculator" "07_Utility_Toolkit" "08_Discord_Landing_Page_Clone" "09_Spotify_Landing_Page_Clone")
           
           for folder in "${PROJECTS[@]}"; do
             if [ -d "$folder" ]; then
               cd "$folder"
-              npm install
-              GITHUB_PAGES=true npm run build
-              # Vite projects use 'dist', Next.js projects use 'out'
-              if [ "$folder" == "08_Discord_Landing_Page_Clone" ]; then
-                cp -R dist/. ../final-site/$folder
+              # Static HTML projects (09) don't need build step
+              if [ "$folder" == "09_Spotify_Landing_Page_Clone" ]; then
+                mkdir -p ../final-site/$folder
+                cp -R . ../final-site/$folder/
               else
-                cp -R out/. ../final-site/$folder
+                npm install
+                GITHUB_PAGES=true npm run build
+                # Vite projects use 'dist', Next.js projects use 'out'
+                if [ "$folder" == "08_Discord_Landing_Page_Clone" ]; then
+                  cp -R dist/. ../final-site/$folder
+                else
+                  cp -R out/. ../final-site/$folder
+                fi
               fi
               cd ..
             fi

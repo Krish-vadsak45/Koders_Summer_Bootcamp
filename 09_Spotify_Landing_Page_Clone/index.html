@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <i class="fa-brands fa-spotify spotify-logo"></i>
+            <i class="fa-solid fa-house home-icon"></i>
+        </div>
+        <div class="header-center">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="What do you want to play?">
+            </div>
+            <i class="fa-solid fa-grip grid-icon"></i>
+        </div>
+        <div class="header-right">
+            <a href="#" class="nav-link">Premium</a>
+            <a href="#" class="nav-link">Support</a>
+            <a href="#" class="nav-link">Download</a>
+            <div class="install-app">
+                <i class="fa-solid fa-arrow-down-to-line"></i>
+                <span>Install App</span>
+            </div>
+            <a href="#" class="sign-up">Sign up</a>
+            <button class="log-in">Log in</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="library-header">
+                <span class="library-title">Your Library</span>
+                <div>
+                    <i class="fa-solid fa-plus plus-icon"></i>
+                    <span>Create</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <h3>Create your first playlist</h3>
+                <p>It's easy, we'll help you</p>
+                <button class="card-button">Create playlist</button>
+            </div>
+
+            <div class="sidebar-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-podcast"></i>
+                </div>
+                <h3>Let's find some podcasts to follow</h3>
+                <p>We'll keep you updated on new episodes</p>
+                <button class="card-button">Browse podcasts</button>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="legal-links">
+                    <a href="#">Legal</a>
+                    <a href="#">Safety & Privacy Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">About Ads</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Cookies</a>
+                </div>
+                <button class="language-btn">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>English</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Trending Songs Section -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Trending songs</h2>
+                    <a href="#" class="show-all">Show all</a>
+                </div>
+                <div class="songs-grid">
+                    <div class="song-card">
+                        <img src="assets/Kath Lagda.jpg" alt="Album Art" class="song-image">
+                        <h4 class="song-title">Kath Lagda</h4>
+                        <p class="song-artist">Jasleen Royal</p>
+                    </div>
+                    <div class="song-card">
+                        <img src="assets/Sadi Sun.jpg" alt="Album Art" class="song-image">
+                        <h4 class="song-title">Sadi Sun</h4>
+                        <p class="song-artist">Guru Randhawa</p>
+                    </div>
+                    <div class="song-card">
+                        <img src="assets/Udi Udi.jpg" alt="Album Art" class="song-image">
+                        <h4 class="song-title">Udi Udi</h4>
+                        <p class="song-artist">Arijit Singh</p>
+                    </div>
+                    <div class="song-card">
+                        <img src="assets/Aarzu.jpg" alt="Album Art" class="song-image">
+                        <h4 class="song-title">Aarzu</h4>
+                        <p class="song-artist">Pritam</p>
+                    </div>
+                    <div class="song-card">
+                        <img src="assets/O Sanam.jpg" alt="Album Art" class="song-image">
+                        <h4 class="song-title">O Sanam</h4>
+                        <p class="song-artist">Lucky Ali</p>
+                    </div>
+                    <div class="song-card">
+                        <img src="assets/Jhol.jpg" alt="Album Art" class="song-image">
+                        <h4 class="song-title">Jhol</h4>
+                        <p class="song-artist">A.R. Rahman</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Popular Artists Section -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Popular artists</h2>
+                    <a href="#" class="show-all">Show all</a>
+                </div>
+                <div class="artists-grid">
+                    <div class="artist-card">
+                        <img src="assets/Pritam.jpg" alt="Artist" class="artist-image">
+                        <h4 class="artist-name">Pritam</h4>
+                    </div>
+                    <div class="artist-card">
+                        <img src="assets/A.R. Rahman.jpg" alt="Artist" class="artist-image">
+                        <h4 class="artist-name">A.R. Rahman</h4>
+                    </div>
+                    <div class="artist-card">
+                        <img src="assets/Arijit Singh.jpg" alt="Artist" class="artist-image">
+                        <h4 class="artist-name">Arijit Singh</h4>
+                    </div>
+                    <div class="artist-card">
+                        <img src="assets/Sachin-Jigar.jpg" alt="Artist" class="artist-image">
+                        <h4 class="artist-name">Sachin-Jigar</h4>
+                    </div>
+                    <div class="artist-card">
+                        <img src="assets/Vishal-Shekhar.jpg" alt="Artist" class="artist-image">
+                        <h4 class="artist-name">Vishal-Shekhar</h4>
+                    </div>
+                    <div class="artist-card">
+                        <img src="assets/Atif Aslam.jpg" alt="Artist" class="artist-image">
+                        <h4 class="artist-name">Atif Aslam</h4>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="preview-banner">
+                <h3>Preview of Spotify</h3>
+                <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+            </div>
+            <button class="sign-up-free">Sign up free</button>
+        </div>
+    </footer>
+</body>
+</html>

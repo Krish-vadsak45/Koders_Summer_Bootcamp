@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.spotify-logo {
+    font-size: 36px;
+    color: #fff;
+}
+
+.home-icon {
+    font-size: 20px;
+    color: #b3b3b3;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.home-icon:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    border-radius: 500px;
+    padding: 10px 16px;
+    width: 300px;
+}
+
+.search-icon {
+    color: #fff;
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+}
+
+.search-bar input::placeholder {
+    color: #b3b3b3;
+}
+
+.grid-icon {
+    font-size: 18px;
+    color: #b3b3b3;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.grid-icon:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.install-app {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #b3b3b3;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.install-app:hover {
+    color: #fff;
+}
+
+.sign-up {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sign-up:hover {
+    color: #fff;
+}
+
+.log-in {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 500px;
+    padding: 10px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.log-in:hover {
+    transform: scale(1.02);
+}
+
+/* Container */
+.container {
+    display: flex;
+    margin-top: 64px;
+    height: calc(100vh - 64px - 96px);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 440px;
+    background-color: #000;
+    padding: 20px 20px 0;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.library-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.library-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.plus-icon {
+    font-size: 18px;
+    color: #b3b3b3;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.plus-icon:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-card {
+    background: black;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+}
+
+.sidebar-card:nth-child(3) {
+    background: black;
+}
+
+.card-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+.sidebar-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 36px;
+    color: #fff;
+}
+
+.sidebar-card p {
+    font-size: 13px;
+    margin-bottom: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
+
+.card-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 500px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.card-button:hover {
+    transform: scale(1.02);
+}
+
+.sidebar-footer {
+    margin-top: 24px;
+    padding-bottom: 20px;
+}
+
+.legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.legal-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.legal-links a:hover {
+    text-decoration: underline;
+}
+
+.language-btn {
+    background-color: transparent;
+    border: 1px solid #727272;
+    color: #fff;
+    border-radius: 500px;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.language-btn:hover {
+    border-color: #fff;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    background: linear-gradient(180deg, #1a1a1a 0%, #121212 30%);
+    padding: 20px 24px;
+    overflow-y: auto;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.show-all {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.show-all:hover {
+    text-decoration: underline;
+}
+
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.song-card {
+    background-color: #181818;
+    padding: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.song-card:hover {
+    background-color: #282828;
+}
+
+.song-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.song-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-artist {
+    font-size: 13px;
+    color: #b3b3b3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.artist-card {
+    cursor: pointer;
+    text-align: center;
+}
+
+.artist-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.artist-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 96px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-top: 1px solid #282828;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 0 24px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.preview-banner {
+    flex: 1;
+}
+
+.preview-banner h3 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.preview-banner p {
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+.sign-up-free {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 500px;
+    padding: 10px 28px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sign-up-free:hover {
+    transform: scale(1.02);
+}
+
+/* Scrollbar */
+.sidebar::-webkit-scrollbar,
+.main-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.main-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.main-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+
+
