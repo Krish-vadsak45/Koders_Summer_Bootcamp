@@ -21,7 +21,7 @@ jobs:
       - name: Build All
         run: |
           mkdir -p final-site
-          PROJECTS=("01_Simple_Digital_Clock" "03_Password_Generator" "04_Color_Picker_Tool" "05_BMI_Calculator" "06_Tip_Calculator" "07_Utility_Toolkit" "08_Discord_Landing_Page_Clone" "09_Spotify_Landing_Page_Clone")
+          PROJECTS=("01_Simple_Digital_Clock" "03_Password_Generator" "04_Color_Picker_Tool" "05_BMI_Calculator" "06_Tip_Calculator" "07_Utility_Toolkit" "08_Discord_Landing_Page_Clone" "09_Spotify_Landing_Page_Clone" "10_Responsive_Navbar")
           
           for folder in "${PROJECTS[@]}"; do
             if [ -d "$folder" ]; then
@@ -36,6 +36,8 @@ jobs:
                 # Vite projects use 'dist', Next.js projects use 'out'
                 if [ "$folder" == "08_Discord_Landing_Page_Clone" ]; then
                   cp -R dist/. ../final-site/$folder
+                elif [ "$folder" == "10_Responsive_Navbar" ]; then
+                  cp -R public/. ../final-site/$folder
                 else
                   cp -R out/. ../final-site/$folder
                 fi
