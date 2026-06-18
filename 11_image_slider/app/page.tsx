@@ -184,10 +184,10 @@ export default function Home() {
           {Object.entries(sliderOptions)
             .filter((item): item is [string, boolean] => typeof item[1] === 'boolean')
             .map((item) => (
-              <ListItemButton 
-                key={item[0]} 
+              <ListItemButton
+                key={item[0]}
                 onClick={updateOptions(item[0], !item[1])}
-                style={{
+                sx={{
                   borderRadius: '8px',
                   margin: '5px 0',
                   transition: 'all 0.2s ease',
