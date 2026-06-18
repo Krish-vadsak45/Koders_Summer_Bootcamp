@@ -2,10 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '/11_image_slider',
+  basePath: '/Koders_Summer_Bootcamp/11_Image_Slider',
   images: {
     unoptimized: true,
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
