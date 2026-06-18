@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+const repoName = "Koders_Summer_Bootcamp";
+const projectPath = "11_Image_Slider";
+const githubPagesBasePath = `/${repoName}/${projectPath}`;
+
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '/Koders_Summer_Bootcamp/11_Image_Slider',
+  trailingSlash: true,
+  basePath: isGithubPages ? githubPagesBasePath : undefined,
+  assetPrefix: isGithubPages ? `${githubPagesBasePath}/` : undefined,
   images: {
     unoptimized: true,
   },
