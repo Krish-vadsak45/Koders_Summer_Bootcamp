@@ -21,7 +21,7 @@ jobs:
       - name: Build All
         run: |
           mkdir -p final-site
-          PROJECTS=("01_Simple_Digital_Clock" "03_Password_Generator" "04_Color_Picker_Tool" "05_BMI_Calculator" "06_Tip_Calculator" "07_Utility_Toolkit" "08_Discord_Landing_Page_Clone" "09_Spotify_Landing_Page_Clone" "10_Responsive_Navbar" "11_Image_Slider" "12_Weather_App")
+          PROJECTS=("01_Simple_Digital_Clock" "03_Password_Generator" "04_Color_Picker_Tool" "05_BMI_Calculator" "06_Tip_Calculator" "07_Utility_Toolkit" "08_Discord_Landing_Page_Clone" "09_Spotify_Landing_Page_Clone" "10_Responsive_Navbar" "11_Image_Slider" "12_Weather_App" "13_Currency_Converter")
           
           for folder in "${PROJECTS[@]}"; do
             if [ -d "$folder" ]; then
