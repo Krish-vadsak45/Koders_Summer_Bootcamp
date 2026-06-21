@@ -10,13 +10,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-dev-server.log
-dev-server.err
 .DS_Store
 Thumbs.db
 coverage/
 *.tsbuildinfo
-.chrome-verify/
-.chrome-capture/
-.agents/*
-README.md
