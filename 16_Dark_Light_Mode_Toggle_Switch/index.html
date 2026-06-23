@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Mode Toggle Switch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>Theme Toggle</h1>
+                <p>Switch between dark and light modes</p>
+            </div>
+            
+            <div class="toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider">
+                        <span class="icon sun">☀️</span>
+                        <span class="icon moon">🌙</span>
+                    </span>
+                </label>
+                <p class="status-text" id="statusText">Current Mode: Light</p>
+            </div>
+
+            <div class="demo-content">
+                <h2>Demo Content</h2>
+                <p>This is sample content to demonstrate the theme switching effect. Notice how the colors change when you toggle the switch.</p>
+                
+                <div class="feature-box">
+                    <h3>✨ Features</h3>
+                    <ul>
+                        <li>Smooth transitions between themes</li>
+                        <li>Persists preference in localStorage</li>
+                        <li>Responsive design</li>
+                        <li>System preference detection</li>
+                    </ul>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn primary">Primary Button</button>
+                    <button class="btn secondary">Secondary Button</button>
+                </div>
+
+                <div class="info-box">
+                    <p><strong>Tip:</strong> Your theme preference is saved automatically and will persist across page reloads.</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Built with HTML, CSS & JavaScript</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
