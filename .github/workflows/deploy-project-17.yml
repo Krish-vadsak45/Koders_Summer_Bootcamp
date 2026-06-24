@@ -29,8 +29,13 @@ jobs:
           GITHUB_PAGES=true NEXT_PUBLIC_TMDB_API_KEY=${{ secrets.TMDB_API_KEY }} npm run build
           rm -rf node_modules
 
+      - name: Prepare GitHub Pages structure
+        run: |
+          mkdir -p final-site/Koders_Summer_Bootcamp
+          cp -R 17_Search_Functionality_Using_API/out final-site/Koders_Summer_Bootcamp/17_Search_Functionality_Using_API
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: 17_Search_Functionality_Using_API/out
+          path: final-site
 
       - uses: actions/deploy-pages@v4
