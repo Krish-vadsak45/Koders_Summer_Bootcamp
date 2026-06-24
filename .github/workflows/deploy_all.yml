@@ -1,8 +1,7 @@
 name: Deploy All Projects
 
 on:
-  push:
-    branches: ["main"]
+  workflow_dispatch: # Disabled by default, enable manually if needed
 
 permissions:
   contents: read
