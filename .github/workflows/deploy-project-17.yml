@@ -1,0 +1,36 @@
+name: Deploy Project 17 Only
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - '17_Search_Functionality_Using_API/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Build Project 17
+        run: |
+          cd 17_Search_Functionality_Using_API
+          npm install --production=false
+          GITHUB_PAGES=true NEXT_PUBLIC_TMDB_API_KEY=${{ secrets.TMDB_API_KEY }} npm run build
+          rm -rf node_modules
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: 17_Search_Functionality_Using_API/out
+
+      - uses: actions/deploy-pages@v4
