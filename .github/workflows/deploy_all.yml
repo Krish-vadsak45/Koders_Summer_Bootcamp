@@ -32,7 +32,7 @@ jobs:
                 cp -R . ../final-site/$folder/
               else
                 npm install
-                GITHUB_PAGES=true npm run build
+                GITHUB_PAGES=true NEXT_PUBLIC_TMDB_API_KEY=${{ secrets.TMDB_API_KEY }} npm run build
                 # Vite projects use 'dist', Next.js projects use 'out'
                 if [ "$folder" == "08_Discord_Landing_Page_Clone" ]; then
                   cp -R dist/. ../final-site/$folder
