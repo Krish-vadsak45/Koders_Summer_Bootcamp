@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), 'Geist Fallback';
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+}
+
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #f8f8f8;
+  --card-foreground: #1a1a1a;
+  --primary: #0066cc;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0f0;
+  --secondary-foreground: #1a1a1a;
+  --muted: #e0e0e0;
+  --muted-foreground: #666666;
+  --accent: #0066cc;
+  --accent-foreground: #ffffff;
+  --border: #e0e0e0;
+  --input: #f0f0f0;
+  --ring: #0066cc;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0f0f0f;
+  --foreground: #fafafa;
+  --card: #1a1a1a;
+  --card-foreground: #fafafa;
+  --primary: #3b82f6;
+  --primary-foreground: #0f0f0f;
+  --secondary: #262626;
+  --secondary-foreground: #fafafa;
+  --muted: #404040;
+  --muted-foreground: #a0a0a0;
+  --accent: #3b82f6;
+  --accent-foreground: #0f0f0f;
+  --border: #262626;
+  --input: #1a1a1a;
+  --ring: #3b82f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --background: #0f0f0f;
+    --foreground: #fafafa;
+    --card: #1a1a1a;
+    --card-foreground: #fafafa;
+    --primary: #3b82f6;
+    --primary-foreground: #0f0f0f;
+    --secondary: #262626;
+    --secondary-foreground: #fafafa;
+    --muted: #404040;
+    --muted-foreground: #a0a0a0;
+    --accent: #3b82f6;
+    --accent-foreground: #0f0f0f;
+    --border: #262626;
+    --input: #1a1a1a;
+    --ring: #3b82f6;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[var(--border)] outline-[var(--ring)]/50;
+  }
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)];
+  }
+  html {
+    @apply font-sans;
+  }
+}
