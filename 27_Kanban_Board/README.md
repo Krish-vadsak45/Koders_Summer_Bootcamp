@@ -25,7 +25,7 @@ A modern, responsive Kanban board UI built with Next.js, React, and Tailwind CSS
 - **Next.js 16.2.6** - React framework with App Router
 - **React 19** - UI library
 - **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS 4.2.0** - Utility-first CSS framework
+- **Tailwind CSS 3.4.17** - Utility-first CSS framework
 - **lucide-react** - Icon library
 - **Custom components** - shadcn-style UI components
 

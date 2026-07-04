@@ -8,7 +8,11 @@ import { Plus } from "lucide-react"
 
 export function KanbanBoard() {
   const { addToast } = useToast()
-  const [columns, setColumns] = useState({
+  const [columns, setColumns] = useState<{
+    todo: { id: string; title: string; tasks: Task[] }
+    inProgress: { id: string; title: string; tasks: Task[] }
+    done: { id: string; title: string; tasks: Task[] }
+  }>({
     todo: {
       id: "todo",
       title: "To Do",
@@ -106,19 +110,22 @@ export function KanbanBoard() {
       }
 
       if (sourceColumnId && sourceColumnId !== targetColumnId) {
-        newColumns[sourceColumnId] = {
-          ...newColumns[sourceColumnId],
-          tasks: newColumns[sourceColumnId].tasks.filter(
+        const sourceCol = newColumns[sourceColumnId as keyof typeof newColumns]
+        const targetCol = newColumns[targetColumnId as keyof typeof newColumns]
+        
+        newColumns[sourceColumnId as keyof typeof newColumns] = {
+          ...sourceCol,
+          tasks: sourceCol.tasks.filter(
             (t) => t.id !== draggedTask.id
           ),
         }
-        newColumns[targetColumnId] = {
-          ...newColumns[targetColumnId],
-          tasks: [...newColumns[targetColumnId].tasks, draggedTask],
+        newColumns[targetColumnId as keyof typeof newColumns] = {
+          ...targetCol,
+          tasks: [...targetCol.tasks, draggedTask],
         }
 
         addToast({
-          message: `Task moved to ${newColumns[targetColumnId].title}`,
+          message: `Task moved to ${targetCol.title}`,
           type: "success",
         })
       }
